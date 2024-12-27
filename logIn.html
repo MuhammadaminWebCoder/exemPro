@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+</head>
+<body>
+    <div class="logIn to-blue-500 w-full flex items-center justify-center h-[100vh]">
+        <span class="loader"></span>
+        <div class="w-[475px] p-7 bg-white rounded-[20px] hidden logIn__wrapper">
+            <div class="text-[32px] font-bold flex items-center ms-10 gap-3"><span class="border block border-4 h-[40px] border-[#F8D442]"></span>Admin Students</div>
+            <p class="text-[25px] mt-5 mb-2 font-semibold text-center">Sign up</p>
+            <p class="text-slate-400 mb-7 text-center">Enter your credentials to access your account</p>
+            <form class="logIn__form">
+                <label class="text-slate-500 font-semibold">Enter new login</label>
+                <input name="username" class="p-3 mt-1 mb-4 border outline-0 w-full rounded-md" type="text" placeholder="Enter your login">
+                <label class="text-slate-500 font-semibold">Create new password</label>
+                <input name="password" class="p-3 mt-1 mb-7 border outline-0 w-full rounded-md" type="password" placeholder="Enter your password">
+                <button type="submit" class="w-full mb-12 rounded-md py-3 text-white bg-[#FEAF00]">SIGN UP</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/logIn.js"></script>
+</body>
+</html>

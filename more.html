@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard__users w-full flex items-center justify-center min-h-[100vh]">
+        <span class="loader"></span>
+        <div class="dashboard__wrapper w-full min-h-[100vh] flex">
+            <div class="sidebar w-[270px] relative bg-[#F2EAE1] pt-[18px] px-[25px]">
+                <div class="sidebar__wrapper text-center">
+                <div class="text-[20px] font-bold flex items-center gap-3"><span class="border block border-2 h-[25px] border-[#F8D442]"></span>Admin Students</div>
+                    <div>
+                        <input class="hidden" id="file-input" type="file"/>
+                        <a href="#" onclick="document.getElementById('file-input').click();">
+                            <img class="fileImage w-[141px] mt-8 mb-6 mx-auto h-[141px] rounded-full" src="./images/images.png" alt="pixels image">
+                        </a>
+                    </div>    
+                    <p class="font-bold username text-lg">user</p>
+                    <p class="text-[#FEAF00] mt-1">Admin</p>
+                    <button class="w-[90%] mt-[40px] mx-auto bg-[#FEAF00] py-2 rounded-md"><i class="fa-solid fa-graduation-cap"></i> Students</button>
+                    <button onclick="logOut()" class="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2  flex items-center gap-3">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
+            </div>
+            <div class="main w-full bg-[#F8F8F8]">
+                <div class="header px-7 bg-[#F2EAE1] flex justify-between items-center">
+                    <i class="fa-solid border border-black w-[30px] h-[30px] rounded-full flex items-center justify-center fa-caret-left"></i>
+                    <div class="flex items-center py-5">
+                        <i class="fa-regular ms-4 me-6 fa-bell"></i>
+                    </div>
+                </div>
+                <div class="main__wrapper px-7">
+                    <div class="main__header py-3 flex justify-between items-center">
+                        <p class="text-[22px] moreUser font-semibold">Students List</p>
+                    </div>
+                    <hr>
+                    <div class="moreBox h-[370px] p-6 w-[650px] bg-white mt-9 rounded-xl">
+                        
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/more.js"></script>
+</body>
+</html>

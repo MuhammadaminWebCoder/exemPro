@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard__users w-full flex items-center justify-center min-h-[100vh]">
+        <span class="loader"></span>
+        <div class="dashboard__wrapper w-full min-h-[100vh] flex">
+            <div class="sidebar w-[270px] relative bg-[#F2EAE1] pt-[18px] px-[25px]">
+                <div class="sidebar__wrapper text-center">
+                <div class="text-[20px] font-bold flex items-center gap-3"><span class="border block border-2 h-[25px] border-[#F8D442]"></span>Admin Students</div>
+                    <div>
+                        <input class="hidden" id="file-input" type="file"/>
+                        <a href="#" onclick="document.getElementById('file-input').click();">
+                            <img class="fileImage w-[141px] mt-8 mb-6 mx-auto h-[141px] rounded-full" src="./images/images.png" alt="pixels image">
+                        </a>
+                    </div>    
+                    <p class="font-bold username text-lg">user</p>
+                    <p class="text-[#FEAF00] mt-1">Admin</p>
+                    <button class="w-[90%] mt-[40px] mx-auto bg-[#FEAF00] py-2 rounded-md"><i class="fa-solid fa-graduation-cap"></i> Students</button>
+                    <button onclick="logOut()" class="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2  flex items-center gap-3">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
+            </div>
+            <div class="main w-full bg-[#F8F8F8]">
+                <div class="header px-7 bg-[#F2EAE1] flex justify-between items-center">
+                    <i onclick="moreBack()" class="fa-solid border border-black w-[30px] h-[30px] rounded-full flex items-center justify-center fa-caret-left"></i>
+                    <div class="flex items-center h-[60px]">
+                        <div class="flex rounded-md moreHidden p-2 my-2 bg-white items-center">
+                            <input type="text" class="outline-0 searchUser" placeholder="Search...">
+                            <i class="mx-2 text-slate-400 fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <i class="fa-regular ms-4 me-6 fa-bell"></i>
+                    </div>
+                </div>
+                <div class="main__wrapper px-7">
+                    <div class="main__header py-3 flex justify-between items-center">
+                        <p class="text-[22px] namedFrom font-semibold">Students List</p>
+                        <div class="flex moreHidden items-center">
+                            <i onclick="sortedBtn()" class="fa-solid text-[#FEAF00] me-4 fa-sort"></i>
+                            <button onclick="modalAdd()" class="bg-[#FEAF00] text-white rounded-sm py-2 px-4">ADD NEW STUDENT</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <table class="w-full table">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 text-slate-400 text-sm font-normal py-4 text-center">Name</th>
+                                    <th class="px-4 text-slate-400 text-sm font-normal py-4 text-left">Email</th>
+                                    <th class="px-4 text-slate-400 text-sm font-normal py-4 text-left">Phone</th>
+                                    <th class="px-4 text-slate-400 text-sm font-normal py-4 text-left">Enroll Number</th>
+                                    <th class="px-4 text-slate-400 text-sm font-normal py-4 text-left">Date admission</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="moreBox moreFlex hidden h-[370px] p-6 w-[650px] bg-white mt-9 rounded-xl">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="modalWrapper hidden flex items-center justify-center backdrop-blur-md bg-[#00000022] min-h-[100vh] w-full absolute top-0 left-0">
+                <div class="containers rounded-[20px] py-8 relative w-[800px] bg-white">
+                    <button onclick="modalCloseHandleBtn()" class="px-2 top-2 right-2 absolute"><i class="fa-solid fa-close"></i></button>
+                    <form class="modal__form justify-center items-center gap-5 flex flex-wrap">
+                        <div>
+                            <input id="addfile-input" class="outline-0 hidden" type="file" placeholder="image" name="image">
+                            <a href="#" onclick="document.getElementById('addfile-input').click();">
+                                <img class="addfileImage w-[250px] h-[230px]" src="./images/images.png" alt="pixels image">
+                            </a>
+                        </div>
+                        <div class="grid h-fit grid-cols-2 gap-3 w-[50%]">
+                            <input class="p-2 rounded-md outline-0 border border-slate-100 shadow" type="text" placeholder="username" name="username">
+                            <input class="p-2 rounded-md outline-0 border border-slate-100 shadow" type="email" placeholder="email" name="email">
+                            <input class="p-2 rounded-md outline-0 border border-slate-100 shadow" type="number" placeholder="phone" name="phone">
+                            <input class="p-2 rounded-md outline-0 border border-slate-100 shadow" type="number" placeholder="number" name="number">
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <button class="px-12 rounded-md text-white py-2 bg-[#FEAF00]" type="submit">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/dashboard.js"></script>
+</body>
+</html>
